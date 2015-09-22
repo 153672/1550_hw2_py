@@ -55,8 +55,13 @@ class Point:
 
     def centre_rotate(self, angle):
         "Rotate around origin (0, 0) by angle"
-        self._theta = (self._theta + angle) % (2 * math.pi)
-        
+        t = (self._theta + angle)
+        pi2 = (2 * math.pi);
+        if t < 0:
+            self._theta = ((self._theta + angle) % pi2) - pi2
+        else:
+            self._theta = (self._theta + angle) % pi2
+
     def rotate(self, p, angle):
         "Rotate around p by angle"
         self.translate(-p.x(), -p.y())

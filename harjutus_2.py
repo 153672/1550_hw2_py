@@ -57,10 +57,10 @@ class PointTests(unittest.TestCase) :
 
     def testRotate(self):
         self.p1.rotate(self.p2, math.pi/3);
-        self.assertEquals(self.p1.x(), 4.397114317029974)
-        self.assertEquals(self.p1.y(), -2.25)
-        self.assertEquals(self.p1.rho(), 4.939343510733989)
-        self.assertEquals(self.p1.theta(), -0.47296312665809603)
+        self.assertAlmostEquals(self.p1.x(), 4.397114317029974)
+        self.assertAlmostEquals(self.p1.y(), -2.25)
+        self.assertAlmostEquals(self.p1.rho(), 4.939343510733989)
+        self.assertAlmostEquals(self.p1.theta(), -0.47296312665809603)
         self.setUp()
 
 class PolarPointTests(PointTests) :
